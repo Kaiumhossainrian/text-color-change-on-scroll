@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Plus+Jakarta+Sans:ital@0;1&display=swap');
+
+*{
+   font-family: "Montserrat", sans-serif;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body{
+   height: 600vh;
+}
+
+.box{
+   position: fixed;
+   width: 100%;
+   height: 100vh;
+   top: 0;
+   left: 0;
+   background-image: url(images/img-1.png);
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   display: flex;
+   align-items: end;
+   justify-content: center;
+   transition: background-image .5s;
+   h2{
+      padding-bottom: 20px;
+      color: #fff;
+   }
+}
