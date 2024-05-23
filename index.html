@@ -9,15 +9,21 @@
 </head>
 
 <body>
-   <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo debitis non esse officia repellat
-      excepturi! Amet quos numquam dignissimos quis aperiam saepe adipisci rerum veritatis, ea aliquam nostrum quidem
-      officiis vel natus blanditiis unde? Tenetur temporibus eaque hic doloremque deserunt incidunt nemo, consectetur
-      voluptatum aspernatur dolorum dolorem obcaecati, ad qui! zz</p>
+   <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe praesentium unde dignissimos, maxime similique fugit impedit voluptatibus odio doloribus repellendus aliquid corrupti optio illum doloremque, culpa repudiandae aliquam facere totam? Repellendus ut nobis molestias quae.</p>
 
    <script>
       let paragraph = document.querySelector('.paragraph');
       let spans = paragraph.textContent.trim().split(' ').map(word => `<span>${word}&nbsp</span>`);
-      paragraph.innerHTML = spans.join('')
+      paragraph.innerHTML = spans.join('');
+
+      window.addEventListener('scroll', () => {
+         let scrollPosition = window.scrollY;
+         let paragraphTop = paragraph.getBoundingClientRect().top;
+         document.querySelectorAll('.paragraph span').forEach((span,index) =>{
+            let spanTop = paragraphTop + (span.offsetHeight + 20) * index;
+            span.classList.toggle('reveal', scrollPosition > spanTop -20)
+         })
+      });
    </script>
 </body>
 
